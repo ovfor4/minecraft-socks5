@@ -3,36 +3,24 @@
 	"id": "socks5-server",
 	"version": "${version}",
 	"name": "Socks5 Server",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Starts a SOCKS5 CONNECT proxy when the game starts.",
 	"authors": [
-		"Me!"
+		"ov4"
 	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
+	"license": "AGPL-3.0-only",
 	"icon": "assets/socks5-server/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"ov4.socks5server.Socks5Server"
-		],
-		"client": [
-			"ov4.socks5server.client.Socks5ServerClient"
+			"ov4.socks5server.Socks5ServerMod"
 		]
 	},
-	"mixins": [
-		"socks5-server.mixins.json",
-		{
-			"config": "socks5-server.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
-		"minecraft": "~26.1",
-		"java": ">=25",
-		"fabric-api": "*"
+		"minecraft": [
+			"1.21.x",
+			">=26 <27"
+		],
+		"java": ">=21"
 	}
 }
